@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+
 
 
 @Component({
@@ -7,17 +9,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./perfil.component.scss']
 })
 export class PerfilComponent implements OnInit {
+  url:string;
+  perfiles:string[]=['proveedor','entidadpublica','productor']; 
+  constructor(
+    private ruta:ActivatedRoute
+  ){
+    this.ruta.params.subscribe(params=>{
+      this.url=params['value']
+    })
+  }
+
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+
   }
-  n():void{
-    
-  }
-
-
-
-
-
   title = 'NOTICIAS';
   Popup = null;
 

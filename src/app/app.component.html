@@ -23,13 +23,12 @@
         <div class="profile--senting">
             <h3>Usuario</h3>
             <div>
-                <select routerLink="/noticias" name="Perfil" id="">
-                    <option value="">Productor</option>
-                    <option value="">Financiero</option>
-                    <option value="">Entidades Publicas</option>
-                    <option value="">Proveeeeeeeeedo   </option>
+                <select (change)="perfil($event)" name="Perfil" id="">
+                <!-- <select [(ngModel)]="data" (ngModelChange)="dataChanged($event)" name="data"> -->
+                    <option [value]="food.viewValue" *ngFor="let food of perfiles" >{{food.value}}</option>
                 </select>
-                <button routerLink="/perfil">click!</button>
+                
+                
             </div>
         </div>  
         
@@ -67,3 +66,5 @@
 </section>
 
 <router-outlet></router-outlet>
+
+
